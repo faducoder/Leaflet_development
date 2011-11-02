@@ -1,0 +1,3 @@
+This is a sandbox. I use it when I want to do some quick experiments. It is basically just a blank html5 page with a stylsheets, and a js directory. It has jquery, jquery ui, and everything else you need to get started already in the head. 
+
+I found myself constantly making a 'dummy' element that I could use to bind events to, so I decided that I should just make a little toolbar with a box_of_sand logo. I just use the logo to bind things like click events, hover events, and toggles to. I am going to keep adding little tools to the toolbar as I notice repeating patterns in my behavior. My main goal is to eliminate all of the tedious and repetitive tasks that I have to go through when I want to experiment with an idea.  

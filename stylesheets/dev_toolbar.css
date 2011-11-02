@@ -1,0 +1,64 @@
+  #dev_toolbar{
+    font-family: 'Arvo', serif;
+    background-color:#7e7d8d;
+    width:90px;
+    height:auto;
+    position:absolute;
+    right:50px;
+    z-index:100;
+    padding:5px;
+    -moz-box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px#888;
+    box-shadow: 0 0 10px #888;  
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  }
+  
+  
+  #event_anchor{
+    position:relative;
+    display:block;
+    margin:0 auto;
+    width:90px;
+    cursor:pointer;
+    
+  }
+  
+  #event_anchor:hover{
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */  
+  }
+  
+  
+  #drag_handle{
+    position:relative;
+    display:block;
+    width:auto;
+    width:90px;
+    height:23px;
+    margin:0 auto;
+    background-image:url('http://dl.dropbox.com/u/25006518/Untitled-1.png');
+  }
+  #drag_handle:hover{
+    cursor:move;
+  }
+  
+  .tool_bar_tool{
+    display:block;
+    position:relative;
+    top:10px;
+    width:80px;
+    height:30px;
+    margin:0 auto;
+    cursor:pointer;
+    background-image:url('http://dl.dropbox.com/u/25006518/button_tool.png');
+    text-align:center;
+    padding-top:10px;
+  }
+  
+#tools{
+  margin-bottom:5px;
+}
+  
