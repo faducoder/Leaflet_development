@@ -6,23 +6,18 @@
     <title>An HTML5 box of sand</title>
     <meta charset="utf-8" />
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script><!--loads jquery-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script><!--loads jquery ui-->
-    <script type="text/javascript" src="js/dev_toolbar.js"></script><!--loads the script that controls the toolbar-->
-    <link rel="stylesheet" type="text/css" href="stylesheets/dev_toolbar.css" /><!--loads the css for the toolbar-->    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script><!--loads jquery ui-->  
     <script type="text/javascript" src="js/script.js"></script><!--This is the place where you play!!!-->
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" /><!--This is the place where you play!!-->    
     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<script src="js/less.js" type="text/javascript"></script>    
+    
 
   </head>
 
-  <body>
-<!--This is the code for the toolbar!!!!!!!!!#########################################-->
-<div id="dev_toolbar">
-<span id="drag_handle"></span>
+<body>
 
-<img id="event_anchor" title="#event_anchor" src="http://p.twimg.com/AdM1G6TCQAAhaoI.png:large"/>
-</div>
-<!--###################################################################################-->
+
 </body>
 
 </html>
