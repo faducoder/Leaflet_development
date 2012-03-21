@@ -1,1 +1,1 @@
-This is just an empty html page with jquery and a stylesheet already embeded in the head. It is really good If you want to create a quick sandbox environment to experiment in.
+This is a interface for drawing regions on a map that I am currently working on.The goal is to let the user draw polygons, be able to adjust the shape of said polygons by draging and dropping markers, and have a datamodel that keeps track of all those polygons.
