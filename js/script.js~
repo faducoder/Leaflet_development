@@ -8,6 +8,6 @@ var cloudmade = new L.TileLayer('http://{s}.tile.cloudmade.com/d4334cd6077140e3b
 });
 
 var sanAntonio = new L.LatLng(29.4238889, -98.4933333); // geographical point (longitude and latitude)
-map.setView(sanAntonio, 10).addLayer(cloudmade);
+map.setView(sanAntonio, 13).addLayer(cloudmade);
   
 });
