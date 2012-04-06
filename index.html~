@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title>An HTML5 box of sand</title>
+    <title>Leaflet Development</title>
     <meta charset="utf-8" />
     
     <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
@@ -26,7 +26,7 @@
 <body>
 
 <div id="map"></div>
-
+<input type="text" id="first_marker">
 </body>
 
 </html>
