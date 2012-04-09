@@ -27,6 +27,20 @@ map.addLayer(polygon);
 map.on('click', function(e) {  
 
     
+    
+   //this sets up an icon to be replaced when redraw. 
+   var MyIcon = L.Icon.extend({
+    iconUrl: 'marker.png',
+    iconSize: new L.Point(10, 16),
+    shadowSize: new L.Point(10, 16),
+    iconAnchor: new L.Point(10, 16)
+    });
+
+    var icon = new MyIcon(); 
+    //this sets up an icon to be replaced when redraw.
+    
+    
+    
   var marker = new L.Marker(e.latlng, {draggable:true});
   polygonPoints.push(e.latlng);
   var markerId = polygonPoints.length -1 
@@ -42,7 +56,14 @@ map.on('click', function(e) {
     polygon.setLatLngs(polygonPoints);
   });      
 
-
+  
+  //When view resets use the small icon if zoom level is less than 13
+  map.on('viewreset', function(){
+    if(map.getZoom() < 13){
+  
+     marker.setIcon(icon);
+    }
+  });
 
 });
 
