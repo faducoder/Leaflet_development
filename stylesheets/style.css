@@ -1,9 +1,29 @@
-body{
-  background-color:#f1f1f1;
-}
 
 #map{
   height:400px;
   width:900px;
+  float:left;
+ 
 }
 
+#add_region_button{
+  float:left;
+  display:block;
+  width:200px;
+  padding:20px;
+  
+  background-color:#f1f1f1;
+  text-decoration:none;
+  color:#666;
+  
+}
+
+#module_wrap{
+  width:1100px;
+  
+}
+
+#control_panel{
+  float:right;
+  width:200px;
+}

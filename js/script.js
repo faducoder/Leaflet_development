@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-var map, cloudmade, sanAntonio, polygonPoints  
+
+
+var map, cloudmade, sanAntonio
  
  
  map = new L.Map('map');
@@ -19,7 +21,12 @@ var map, cloudmade, sanAntonio, polygonPoints
 
 
 
-polygonPoints = [];
+
+
+
+
+function region(){
+var polygonPoints = [];
 
 var polygon = new L.Polygon(polygonPoints);
 map.addLayer(polygon);
@@ -71,11 +78,13 @@ map.on('click', function(e) {
 
 
 
-    
-      
+}
+
+
+$('#add_region_button').click(function(){
+  new region();
+});    
+
+
+
 });
-
-
-
-
-
