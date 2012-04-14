@@ -12,7 +12,18 @@
   width:200px;
   padding:20px;
   
-  background-color:f1;
+  background-color:#f1f1f1;
+  text-decoration:none;
+  color:#666;
+  
+}
+
+#save_region_button{
+  float:left;
+  display:none;
+  width:200px;
+  padding:20px;
+  background-color:#f1f1f1;
   text-decoration:none;
   color:#666;
   

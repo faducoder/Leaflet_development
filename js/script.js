@@ -16,24 +16,20 @@ var map, cloudmade, sanAntonio
  sanAntonio = new L.LatLng(29.4238889, -98.4933333); // geographical point (longitude and latitude)
 
 
- map.setView(sanAntonio, 13).addLayer(cloudmade);
+map.setView(sanAntonio, 13).addLayer(cloudmade);
 
-
-
-
-
-
-
-
+//this is a single instance of a polygon drawing.
 function region(){
 var polygonPoints = [];
 
 var polygon = new L.Polygon(polygonPoints);
 map.addLayer(polygon);
+    
+    
 
 map.on('click', function(e) {  
 
-    
+
     
    //this sets up an icon to be replaced when redraw. 
    var MyIcon = L.Icon.extend({
@@ -72,19 +68,25 @@ map.on('click', function(e) {
     }
   });
 
-});
+
+});// ends the map.on('click ') listener
+
+
+}//ends the region function
 
 
 
-
-
-}
-
-
+//when you click add region button it is hidden and then the save button is showed.
 $('#add_region_button').click(function(){
   new region();
+  $(this).hide();
+  $('#save_region_button').show();
 });    
 
+$('#save_region_button').click(function(){
+  $(this).hide();
+  $('#add_region_button').show();
+}); 
 
 
 });
