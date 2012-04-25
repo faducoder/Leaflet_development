@@ -15,28 +15,31 @@ var map, cloudmade, sanAntonio, polygonPoints
 
  map.setView(sanAntonio, 13).addLayer(cloudmade);
 
+//everything above sets up the map
 
 
 
-polygonPoints = [];
+function enableClick(){
+  map.on('click', function(e) {    
+    var marker = new L.Marker(e.latlng, {draggable:true});
+    map.addLayer(marker);
+  });//closes the click function
+
+  this.disableClick = function(){
+    map.off('click');
+  }
+
+}
 
 
-map.on('click', function(e) {  
-    
-  var marker = new L.Marker(e.latlng, {draggable:true});
-  polygonPoints.push(e.latlng);
-  var markerId = polygonPoints.length -1 
-  map.addLayer(marker);
-  
-  
-  
-  
-  
-  //I get undefined when I click the marker here 
-  marker.on('drag', function(){
-    var locationWhileDrag = marker.getLatLng();
-    $('#first_marker').val(locationWhileDrag);
-  });      
+
+//when 
+$('#enable_click').click(function(){
+  var enable_click = new enableClick()
+
+  $('#disable_click').click(function(){
+    enable_click.disableClick;
+  });
 
 });
 
@@ -44,25 +47,7 @@ map.on('click', function(e) {
 
 
 
-
-//this will create a polygon based on the polygonPoints array values 
-//var polygon = new L.Polygon(polygonPoints);
-//map.addLayer(polygon);
-
-
-//map.on('click', function(e) {  
-    
-//    polygonPoints.push(e.latlng);
-//    polygon.setLatLngs(polygonPoints);
-      
-//});
-
-
-
-
- 
-
     
     
  
-});
+});//closes the docuent ready function
