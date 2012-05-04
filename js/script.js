@@ -18,16 +18,50 @@ var map, cloudmade, sanAntonio
 
 map.setView(sanAntonio, 13).addLayer(cloudmade);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //this is a single instance of a polygon drawing.
 function region(){
 var polygonPoints = [];
 
+
+
+
 var polygon = new L.Polygon(polygonPoints);
+
+
+
 map.addLayer(polygon);
     
     
 
-map.on('click', function(e) {  
+
+var region_shit = function(e) {  
 
 
     
@@ -66,10 +100,25 @@ map.on('click', function(e) {
   
      marker.setIcon(icon);
     }
+    
   });
 
 
-});// ends the map.on('click ') listener
+}
+
+    
+    
+        
+
+map.on('click', region_shit);// ends the map.on('click ') listener
+
+
+
+$('#save_region_button').click(function(){
+  map.off('click', region_shit);
+  $(this).hide();
+  $('#add_region_button').show();
+}); 
 
 
 }//ends the region function
@@ -83,10 +132,7 @@ $('#add_region_button').click(function(){
   $('#save_region_button').show();
 });    
 
-$('#save_region_button').click(function(){
-  $(this).hide();
-  $('#add_region_button').show();
-}); 
+
 
 
 });
