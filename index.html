@@ -5,33 +5,112 @@
   <head>
     <title>Leaflet Development</title>
     <meta charset="utf-8" />
-    
-    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.ie.css" />
-<![endif]-->
-    
-    
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+		<!--[if lte IE 8]>
+		     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+				  <![endif]-->
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script><!--loads jquery-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script><!--loads jquery ui-->  
-    <script type="text/javascript" src="js/script.js"></script><!--This is the place where you play!!!-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script><!--loads jquery ui-->
+    <script type="text/javascript" src="js/handlebars.js"></script><!--loads handlebars.js-->  
+    
     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 	  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-	   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
- <!--[if lte IE 8]>
-     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
- <![endif]-->
- <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
-    
+    <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script> 
+    <script type="text/javascript" src="js/script.js"></script><!--This is the place where you play!!!-->
+
+
+<style>
+  body{
+    font-family: sans-serif;
+  }
+  #latitude_longitude{ 
+    margin-top:10px;
+  }
+  #latitude_longitude th { 
+    border: 1px #666 solid;
+    padding: 5px 10px 5px 10px;
+    background-color:#666;
+    color:#f1f1f1; 
+  }
+  #latitude_longitude td{
+    background-color:#fff;
+    text-align:center;
+    padding: 5px 10px 5px 10px;
+  }
+  .button{
+    background-color:#666;
+    padding:10px;
+    color:white;
+    text-decoration:none;
+
+  }
+  .ui-autocomplete {
+    background-color: white;
+    width: 300px;
+    border: 1px solid #cfcfcf;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+</style>
+
+
 
   </head>
 
 <body>
 
+
+
+<script id="lat_lng_presenter" type="text/x-handlebars-template">
+    <tr>
+        <td>
+            {{latitude}}
+        </td>
+        <td>
+            {{longitude}}
+        </td>
+    </tr>
+</script>
+
+
+
+
+
 <h1>Click to draw polygons, change shape of the polygons by dragging the markers around.</h1>
 <div id="map"></div>
 
-<input type="text" id="first_marker">
+
+
+
+
+<!--table that holds the lat long for polygon-->
+<table id="latitude_longitude">
+
+    <tr>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    
+</table>
+<!--table that holds the lat long for polygon-->
+
+<!--test to see if point is in polygon-->
+<p>Check to see if point is in polygon:</p>
+<label>Address: </label><input id="address"  type="text"/>
+
+
+<input id="lat" type="hidden" />
+
+<input id="lng" type="hidden" />
+<a href="#checkPip" class="button">Is point in polygon?</a>
+
+
+
+
+
 </body>
 
 </html>
