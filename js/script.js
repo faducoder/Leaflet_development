@@ -81,7 +81,7 @@ map.addLayer(polygon);
 map.on('click', function(e) {  
 
     
-  var marker = new L.Marker(e.latlng);
+  var marker = new L.Marker(e.latlng, {draggable: true});
   polygonPoints.push(e.latlng);
   var markerId = polygonPoints.length -1 
   map.addLayer(marker);
@@ -95,6 +95,14 @@ map.on('click', function(e) {
   var template = Handlebars.compile(list_latlng);
   var data = {latitude: e.latlng.lat , longitude: e.latlng.lng}
   $('#latitude_longitude').append(template(data));
+
+  marker.on('drag', function(){
+    var locationWhileDrag = marker.getLatLng();
+    $('#first_marker').val(locationWhileDrag);
+    polygonPoints.splice(markerId,1,locationWhileDrag);
+    polygon.setLatLngs(polygonPoints);
+  });
+
 
   
 });
@@ -194,13 +202,5 @@ $("#address").autocomplete({
 //     }
 //   });
 
-
-
-  // marker.on('drag', function(){
-  //   var locationWhileDrag = marker.getLatLng();
-  //   $('#first_marker').val(locationWhileDrag);
-  //   polygonPoints.splice(markerId,1,locationWhileDrag);
-  //   polygon.setLatLngs(polygonPoints);
-  // });
 
 
